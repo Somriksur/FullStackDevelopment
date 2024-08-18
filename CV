@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somrik Sur - CV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .container {
+            width: 800px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 0;
+            border-radius: 8px 8px 0 0;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 1px;
+        }
+        h2 {
+            margin-top: 40px;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+            color: #007bff;
+        }
+        .summary, .education, .experience, .skills, .projects, .certifications {
+            margin-bottom: 20px;
+        }
+        .contact-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .contact-info p {
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        ul li strong {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Somrik Sur</h1>
+        <p>Android Developer and Problem Solver</p>
+    </header>
+
+    <div class="contact-info">
+        <p>Phone: +91-6297536783</p>
+        <p>Email: somriksur@gmail.com</p>
+        <p>Barasat, North 24 Pargana, 700126</p>
+    </div>
+
+    <section class="summary">
+        <h2>Summary</h2>
+        <p>To secure an internship position as an Android Developer where I can leverage my solid foundation in Computer Science and passion for mobile application development. Eager to apply my skills in Java and Android Studio to contribute to innovative projects while gaining practical experience in a professional environment. Committed to continuous learning and adapting to emerging technologies, I aim to contribute effectively to the team, drive results, and advance my career in the dynamic field of software development.</p>
+    </section>
+
+    <section class="education">
+        <h2>Education</h2>
+        <ul>
+            <li><strong>Adamas University</strong> - Bachelor's Degree in Computer Science and Engineering (2020 - 2026)</li>
+            <li><strong>Sankoa CG High School</strong> - Secondary and Higher Secondary (2014 - 2022)</li>
+        </ul>
+    </section>
+
+    <section class="experience">
+        <h2>Work Experience</h2>
+        <ul>
+            <li><strong>Student Member</strong> - Adamas University Robotics and AI Club (2022 - Present)</li>
+            <li>My initial project with the robotics club involved creating a vacuum cleaner robot equipped with obstacle detection capabilities.</li>
+            <li>Currently, I'm focused on developing a Smart Wheelchair, and progress is underway.</li>
+        </ul>
+    </section>
+
+    <section class="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Java (OOP)</li>
+            <li>C++ (OOP)</li>
+            <li>Version Control</li>
+            <li>Android SDK</li>
+            <li>Arduino (Tinkercad)</li>
+            <li>Data Structures</li>
+            <li>Competitive Programming</li>
+        </ul>
+    </section>
+
+    <section class="projects">
+        <h2>Projects</h2>
+        <ul>
+            <li><strong>Android Developer</strong> (2022 - Present)</li>
+            <li>My first project is a Tic-Tac-Toe game you can play offline with friends on one phone. It’s all set up and working well.</li>
+            <li>Next, I made a to-do list app where you can save notes in different ways like photos, letters, sketches, and PDFs. It’s all ready to use.</li>
+            <li>Right now, I'm working on a Food Delivery System. It's coming along nicely, and I'm focused on making it efficient and user-friendly.</li>
+        </ul>
+    </section>
+
+    <section class="certifications">
+        <h2>Certifications</h2>
+        <ul>
+            <li>IBM Certified in Enterprise Design Thinking</li>
+            <li>Two-time Participant, Adamas University Tech Fest</li>
+            <li>Smart India Hackathon Internal Hackathon Champion</li>
+            <li>Agora College Alpha Certified in Java</li>
+        </ul>
+    </section>
+</div>
+
+</body>
+</html>
