@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment-2</title>
+</head>
+<body>
+<table border="2px">
+  <tr>
+    <td align="left" valign="top" height="100px" width="100px" style="background-color: #ff9999;">A</td>
+    <td rowspan="2" align="right" valign="top" height="200px" width="100px" style="background-color: #ffcc99;">C</td>
+    <td colspan="2" rowspan="2" height="200px" width="200px" style="background-color: #ffff99;">
+      <table border="1px" align="center">
+        <tr>
+          <td height="50px" width="50px" align="center" style="background-color: #99ff99;">K</td>
+          <td rowspan="2" width="50px" height="100px" align="center" valign="top" style="background-color: #99ccff;">N</td>
+        </tr>
+        <tr>
+          <td height="50px" width="50px" align="center" valign="bottom" style="background-color: #99ffcc;">L</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" height="100px" width="100px" style="background-color: #ff9999;">B</td>
+  </tr>
+  <tr>
+    <td colspan="2" align="left" valign="bottom" height="100px" width="200px" style="background-color: #cc99ff;">D</td>
+    <td rowspan="3" align="right" valign="bottom" height="300px" width="100px" style="background-color: #ff99cc;">H</td>
+    <td align="right" valign="bottom" height="100px" width="100px" style="background-color: #ccccff;">J</td>
+  </tr>
+  <tr>
+    <td align="center" height="100px" width="100px" style="background-color: #99ccff;">E</td>
+    <td rowspan="2" align="right" height="200px" width="100px" style="background-color: #ccff99;">G</td>
+    <td rowspan="2" align="right" valign="top" height="200px" width="100px" style="background-color: #ffcc99;">I</td>
+  </tr>
+  <tr>
+    <td height="100px" width="100px" style="background-color: #ffccff;">F</td>
+  </tr>
+</table>
+
+<div style="text-align: -webkit-left; margin-top: 20px;">
+  <a href="CV.html" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">CV</a>
+</div>
+
+</body>
+</html>
