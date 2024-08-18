@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1</title>
+</head>
+<body>
+<table style="height: 550px; width: 550px;" border="5">
+    <tr>
+        <td style="background-color: #455fdd" colspan="6" valign="top">Welcome To Full Stack Development</td>
+        <td style="width: 80px; background-color: #9d65d5" valign="top" align="right" rowspan="6">A</td>
+    </tr>
+    <tr>
+        <td style="width: 80px; background-color: aqua" rowspan="6">C</td>
+        <td style="width: 80px; background-color: aquamarine" align="right" valign="bottom" colspan="4">B</td>
+        <td style="width: 80px; background-color: darkorange" valign="top" align="right" rowspan="4">K</td>
+    </tr>
+    <tr>
+        <td style="width: 80px; background-color: chartreuse" rowspan="4">D</td>
+        <td style="width: 80px; background-color: deeppink" valign="top" align="left" colspan="2">L</td>
+        <td style="width: 80px; background-color: goldenrod" valign="top" align="left" rowspan="2">G</td>
+    </tr>
+    <tr>
+        <td style="width: 80px; background-color: #248124" align="center" rowspan="2">E</td>
+        <td style="width: 80px; background-color: lime" valign="bottom" align="right" >F</td>
+    </tr>
+    <tr>
+        <td style="width: 80px; background-color: red" valign="top" align="right" colspan="2">H</td>
+    </tr>
+    <tr>
+        <td style="width: 80px; background-color: lightseagreen" align="center" valign="bottom" colspan="4">I</td>
+    </tr>
+    <tr>
+        <td style="width: 80px; background-color: #00ff5b" valign="top" align="left" colspan="6">J</td>
+    </tr>
+</table>
+</body>
+</html>
