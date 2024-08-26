@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook</title>
+    <style type="text/css">
+        body{
+            margin: 0px;
+        }
+        .back{
+            background-color: #3F5C9A;
+            height: 100px;
+            width: 100%;
+            position: relative;
+        }
+        .face{
+            color: white;
+            position: absolute;
+            top: 15%;
+            left: 20%
+        }
+        .tabl{
+            color: white;
+            position: absolute;
+            top: 15%;
+            right: 100px;
+        }
+        .container{
+            background-color: #E2E5F0;
+            width: 100%;
+            height: 600px;
+            position: relative;
+        }
+        .img{
+            width: 500px;
+            height: 300px;
+            position: absolute;
+            top: 100px;
+            left: 200px;
+        }
+        .a{
+            position: absolute;top: 40px;
+            left: 150px;
+            font-size: 25px;
+        }
+        .form{
+            position: absolute;
+            float: right;
+            top: 30px;
+            left: 800px;
+        }
+        .birth{
+            position: absolute;
+            top: 340px;
+            right: 40px;
+        }
+        .gender{
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="back">
+    <div class="face">
+        <h1 style="margin-left: 0;">Facebook</h1>
+    </div>
+    <div class="tabl">
+        <table>
+            <tr>
+                <td><label>Email or Phone</label></td>
+                <td><label>Password</label></td>
+            </tr>
+            <tr>
+                <td>
+                    <form><input type="text" pattern="\w{3,15}@gmail.com" name="">
+                    </form>
+                </td>
+                <td>
+                    <form><input type="password" pattern="\w{5,10}" name=""></form>
+                </td>
+                <td>
+                    <button style="background-color: #3F5C9A; color: white" type="submit">Login</button>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href="" style="color: lightblue">Forgotten password</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="container">
+    <img src="WhatsApp Image 2024-08-25 at 12.55.39_f4e20973.jpg" alt="" class="img">
+    <div class="a">Connect with friends and the<br> world around you on Facebook.</div>
+    <div class="form">
+        <h1 style="font-family: 'system-ui'; font-weight: 500;">Sign Up</h1>
+        <h2 style="font-family: 'system-ui'; font-weight: 500;">It's free and always will be.</h2>
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <input type="text" pattern="[A-Za-z]{5,15}" placeholder="First Name" style="width: 200px; height: 40px; border: 5px;">
+                        <input type="text" pattern="[A-Za-z]{5,15}" placeholder="surname" style="width: 200px; height: 40px; border: 5px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" pattern="\d{11} || \w{3,15}@gmail.com" placeholder="Mobile Number Or Email Address" style="width: 400px; height: 40px; border: 25px; padding: 5px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="password" pattern="\w{3,10}" placeholder="Password" style="width: 400px; height: 40px; border: 5px; padding: 5px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label><h3 style="font-family: 'system-ui'; font-weight: 500;">Birthday</h3></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="day"></label>
+                        <select id="day">
+                            <option value="">Day</option>
+                            <script>
+                                for (let day = 1; day <= 31; day++) {
+                                    document.write(`<option value="${day}">${day}</option>`);
+                                }
+                            </script>
+                        </select>
+                        <label for="month"></label>
+                        <select id="month">
+                            <option value="">Month</option>
+                            <script>
+                                const months = [
+                                    "January", "February", "March", "April", "May", "June",
+                                    "July", "August", "September", "October", "November", "December"
+                                ];
+
+                                months.forEach((month, index) => {
+                                    document.write(`<option value="${index + 1}">${month}</option>`);
+                                });
+                            </script>
+                        </select>
+                        <label for="year"></label>
+                        <select id="year">
+                            <option value="">Year</option>
+                            <script>
+                                const currentYear = new Date().getFullYear();
+                                for (let year = 1900; year <= currentYear; year++) {
+                                    document.write(`<option value="${year}">${year}</option>`);
+                                }
+                            </script>
+                        </select>
+                    </td>
+                    <td class="birth">
+                        <a href="">Why I need to provide my <br>Birthday</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="gender">
+                        <input type="radio" name="gender" checked>Male
+                        <input type="radio" name="gender">Female
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>By Clicking to sign up you agree to our <a href="">terms and Policy</a> and <br><a href="">cookie Policy </a> you may receive sms notification from us and <br>can opt out anytime</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="Signup" style="height: 40px; width: 150px; background-color: #5B9147; color: white; border-radius: 10px;">Create account</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><a href="">Create a Page </a>for celebrity, band or business</p>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+</body>
+</html>
