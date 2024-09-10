@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: white;
+      flex-direction: column;
+    }
+
+    .container {
+      text-align: center;
+      width: 300px;
+    }
+
+    .input-section {
+      margin-bottom: 20px;
+    }
+
+    .input-section label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    .input-section input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .input-section button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .result {
+      margin: 20px 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .gauge-container {
+      position: relative;
+      width: 300px;
+      height: 150px;
+      margin: 0 auto;
+      background-image: url("https://res.cloudinary.com/ds2xh85dt/image/upload/v1725909904/Untitled_design_77_worlcc.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .gauge {
+      width: 100%;
+      height: 100%;
+    }
+
+    .pointer {
+      position: absolute;
+      width: 3px;
+      height: 100px;
+      background-color: black;
+      top: 50px;
+      left: 50%;
+      transform-origin: bottom center;
+      transition: transform 0.3s;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>BMI Calculator</h1>
+  <div class="input-section">
+    <label for="weight">Weight (kg):</label>
+    <input type="number" id="weight" placeholder="Enter your weight" value="45">
+
+    <label for="height">Height (m):</label>
+    <input type="number" id="height" placeholder="Enter your height in meters" step="0.01" value="165">
+
+    <button onclick="calculateBMI()">Calculate BMI</button>
+  </div>
+
+  <div class="result">
+    BMI = <span id="bmi-value">0</span>
+  </div>
+
+  <div class="gauge-container">
+
+    <div class="pointer" id="pointer"></div>
+    <div class="circle"></div>
+  </div>
+</div>
+
+<script>
+  function calculateBMI() {
+    const weight = parseFloat(document.getElementById('weight').value);
+    const height = parseFloat(document.getElementById('height').value) / 100; // Convert cm to meters
+    const bmiValue = document.getElementById('bmi-value');
+
+    // Ensure weight and height are numbers and positive values
+    if (!isNaN(weight) && !isNaN(height) && weight > 0 && height > 0) {
+      const bmi = (weight / (height * height)).toFixed(2); // Calculate BMI
+      bmiValue.textContent = bmi;  // Update the displayed BMI value
+      updateBMIPointer(bmi);  // Move the pointer based on the calculated BMI
+    } else {
+      bmiValue.textContent = '0';  // Reset the BMI display
+      updateBMIPointer(0);  // Reset the pointer
+      alert('Please enter valid values for weight and height.');
+    }
+  }
+
+  function updateBMIPointer(bmi) {
+    const pointer = document.getElementById('pointer');
+    let degree;
+
+    // More precise degree mapping based on the image's BMI categories:
+    if (bmi < 16) {
+      degree = -90;  // Far left, below underweight
+    } else if (bmi >= 16 && bmi < 18.5) {
+      // Map BMI 16 to 18.5 to degrees -90 to -45 (Underweight range)
+      degree = ((bmi - 16) / (18.5 - 16)) * (-57 - (-73)) + (-73);
+    } else if (bmi >= 18.5 && bmi < 25) {
+      // Map BMI 18.5 to 25 to degrees -55 to -15 (Normal range)
+      degree = ((bmi - 18.5) / (25 - 18.5)) * (-15 - (-55)) + (-55);
+    } else if (bmi >= 25 && bmi < 30) {
+      // Map BMI 25 to 30 to degrees 0 to 45 (Overweight range)
+      degree = ((bmi - 25) / (30 - 25)) * (15 - (-15)) + (-15);
+    } else if (bmi >= 30 && bmi <= 40) {
+
+      degree = ((bmi - 30) / (40 - 30)) * (75 - (16)) + (16);
+    } else {
+      degree = 90;  // Far right, above obesity
+    }
+
+    // Rotate the pointer based on the calculated degree
+    pointer.style.transform = rotate(${degree}deg);
+  }
+</script>
+
+
+
+
+</body>
+</html>
