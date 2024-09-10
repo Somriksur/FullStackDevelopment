@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' type='text/css' href='style.css'>
+        <style>
+            
+body {
+    background-color: black;
+    font-family: Helvetica ,Arial, sans-serif;
+    font-weight: 50;
+    
+}
+h1, h2, a {
+    color: white;
+    text-align: center;
+}
+h2 {
+    margin-top: 50px;
+}
+#container {
+    margin: auto;
+    margin-top: 50px;
+    font-size: 50px;
+    display: grid;
+    width: 228px;
+    height: 320px;
+    border-radius: 5px;
+    font-size: 0px;
+    
+}
+#display {
+    background-color: rgb(43,41,46);
+    border-radius: 5px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    height: 80px;
+    font-size: 21px;
+    color: white;
+    text-align: right;
+    padding-left: 15px;
+    padding-right: 15px;
+    line-height: 100px;
+}
+button {
+    width: 57px;
+    height: 50px;
+    padding: 0px;
+    margin: 0px;
+    border-color: rgb(43,40,46);
+    background-color: rgb(95,93,97);
+    color: white;
+    font-size: 21px;
+    
+}
+
+
+
+#rowOne :nth-child(1) {
+    background-color: rgb(73,65,65);
+}
+#rowOne :nth-child(2) {
+    background-color: rgb(73,65,65);
+
+}
+#rowOne :nth-child(3) {
+    background-color: rgb(73,65,65);
+
+}
+#rowOne :last-child {
+    background-color: rgb(253,158,43);
+}
+#rowTwo :last-child {
+    background-color: rgb(253,158,43);
+}
+#rowThree :last-child {
+    background-color: rgb(253,158,43);
+}
+#rowFour :last-child {
+    background-color: rgb(253,158,43);
+}
+#rowFive :first-child {
+    width: 114px;
+    border-bottom-left-radius: 5px;
+    text-align: left;
+    padding-left: 21px;
+}
+#rowFive :last-child {
+    background-color: rgb(253,158,43);
+    border-bottom-right-radius: 5px;
+}
+
+        </style>
+    </head>
+    <body>
+        <div id='container'>
+            <div id='display'>0</div>
+            <div class='calculatorKeys'>
+                <div id='rowOne'>
+                    <button onclick="displayClear()" id='clear'>AC</button>  
+                    <button onclick="toggleNegate()" id='negate'>+/-</button>
+                    <button onclick="del()" id='del'>DEL</button>
+                    <button onclick="setOperation('/')" id='divide'>/</button>
+                </div>
+                <div id='rowTwo'>
+                    <button onclick='appendNumber(7)' id='seven'>7</button>
+                    <button onclick='appendNumber(8)' id='eight'>8</button>
+                    <button onclick='appendNumber(9)' id='nine'>9</button>
+                    <button onclick="setOperation('*')" id='multiply'>x</button>
+                </div>
+                <div id='rowThree'>
+                    <button onclick='appendNumber(4)' id='four'>4</button>
+                    <button onclick='appendNumber(5)' id='five'>5</button>
+                    <button onclick='appendNumber(6)' id='six'>6</button>
+                    <button onclick="setOperation('-')" id='minus'>-</button>
+                </div>
+                <div id='rowFour'>
+                    <button onclick='appendNumber(1)' id='one'>1</button>
+                    <button onclick='appendNumber(2)' id='two'>2</button>
+                    <button onclick='appendNumber(3)' id='three'>3</button>
+                    <button onclick="setOperation('+')" id='plus'>+</button>
+                </div>
+                <div id='rowFive'>
+                    <button onclick='appendNumber(0)' id='zero'>0</button>
+                    <button onclick="appendDot()" id='dot'>.</button>
+                    <button onclick="calculateResult()" id='equals'>=</button>
+                </div>
+            </div>
+        </div> 
+    
+        <script>
+            var concatinate = "";
+            var operation = "";
+            var lastOperator = "";
+    
+            function updateDisplay() {
+                document.getElementById("display").innerHTML = concatinate || "0";
+            }
+    
+            function displayClear() {
+                concatinate = "";
+                operation = "";
+                lastOperator = "";
+                updateDisplay();
+            }
+    
+            function del() {
+                if (concatinate.length > 0) {
+                    concatinate = concatinate.slice(0, -1);
+                }
+                updateDisplay();
+            }
+    
+            function appendNumber(number) {
+                concatinate += number;
+                updateDisplay();
+            }
+    
+            function appendDot() {
+                if (!concatinate.includes('.')) {
+                    concatinate += '.';
+                    updateDisplay();
+                }
+            }
+    
+            function setOperation(op) {
+                if (concatinate === "") return; // Prevent setting an operation with empty input
+                if (lastOperator) {
+                    calculateResult(); // Compute the previous operation first
+                }
+                operation = op;
+                lastOperator = op;
+                concatinate += " " + op + " ";
+                updateDisplay();
+            }
+    
+            function toggleNegate() {
+                if (concatinate.length > 0) {
+                    if (concatinate.charAt(0) === '-') {
+                        concatinate = concatinate.substring(1);
+                    } else {
+                        concatinate = '-' + concatinate;
+                    }
+                    updateDisplay();
+                }
+            }
+    
+            function calculateResult() {
+                try {
+                    var result = eval(concatinate.replace(/x/g, '*').replace(/÷/g, '/')); // Using eval for simplicity
+                    concatinate = result.toString();
+                    updateDisplay();
+                    lastOperator = "";
+                } catch (error) {
+                    concatinate = "Error";
+                    updateDisplay();
+                    lastOperator = "";
+                }
+            }
+        </script>
+    </body>
+
+</html>
